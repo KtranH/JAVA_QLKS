@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <div th:replace = "Container :: head"></div>
+    <div th:replace = "~{Container :: head}"></div>
     <title>Trang chủ</title>
 </head>
 <body>
@@ -228,18 +228,11 @@
                   <div class="card-body">
                     <h5 class="card-title">Hoạt động của khách sạn<span> | các ngày trong tuần</span></h5>
                     <div class="activity">
-                      @foreach ($lines as $x)
-                       @php
-                           $array = explode('|', $x);
-                       @endphp
-                        <div class="activity-item d-flex">
-                          <div class="activite-label">@php echo $array[0] @endphp </div>
+                        <div class="activity-item d-flex" th:each = "activity : ${listline}">
+                          <div class="activite-label" th:text = "${activity[0]}"></div>
                           <i class='bi bi-circle-fill activity-badge text-info align-self-start' style="color:#74C0FC"></i>
-                          <div class="activity-content">
-                              @php echo $array[1] @endphp 
-                          </div>
+                          <div class="activity-content" th:text = "${activity[1]}"></div>
                         </div><!-- End activity item-->
-                      @endforeach
                     </div>
                   </div>
                 </div><!-- End Recent Activity -->
@@ -363,18 +356,16 @@
                 </div><!-- End Website Traffic -->
       
                 <!-- News & Updates Traffic -->
-                <div class="card">
-                  <div class="card-body pb-0">
-                    <h5 class="card-title">Tin tức &amp; Thông báo <span>| Hôm nay</span></h5>
+                <div class = "card">
+                  <div class = "card-body pb-0">
+                    <h5 class = "card-title">Tin tức &amp; Thông báo <span>| Hôm nay</span></h5>
       
-                    <div class="news">
-                        @foreach ($data as $x)
-                            <div class="post-item clearfix">
-                              <img src="@php echo $x["image"] @endphp" alt="">
-                              <h4><a href="#">@php echo $x["title"] @endphp</a></h4>
-                              <p>@php echo $x["content"] @endphp</p>
-                            </div>
-                        @endforeach
+                    <div class = "news">
+                      <div class ="post-item clearfix" th:each = "news : ${listnews}">
+                        <img th:src = "${news.image}" alt="">
+                        <h4><a href= "#" th:text = "${news.title}"></a></h4>
+                        <p th:text = "${news.content}"></p>
+                      </div>
                     </div><!-- End sidebar recent posts-->
       
                   </div>
@@ -387,6 +378,6 @@
       
         </main><!-- End #main -->
     </div>
-    <div th:replace = "Container :: body"></div>
+    <div th:replace = "~{Container :: body}"></div>
 </body>
 </html>
