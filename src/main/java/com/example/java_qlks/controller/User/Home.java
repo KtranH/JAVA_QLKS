@@ -28,8 +28,8 @@ public class Home {
                 String[] lines = line.split("\\|");
                 listLine.add(lines);
             } 
-                // Truyền danh sách dòng vào model
                 model.addAttribute("listnews", newsService.readNewsItems());
+                // Truyền danh sách dòng vào model
                 model.addAttribute("listline", listLine);
                 // Trả về tên view
                 return "User/Home";
