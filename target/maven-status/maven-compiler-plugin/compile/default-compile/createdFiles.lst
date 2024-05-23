@@ -1,0 +1,9 @@
+com\example\java_qlks\model\DichVu.class
+com\example\java_qlks\repositories\DichVuRepositories.class
+com\example\java_qlks\JavaQlksApplication.class
+com\example\java_qlks\model\NewsItem.class
+com\example\java_qlks\service\DichVuService.class
+com\example\java_qlks\service\DichVuServiceImp.class
+com\example\java_qlks\controller\User\Home.class
+com\example\java_qlks\service\NewsService.class
+com\example\java_qlks\controller\User\DichVuController.class
