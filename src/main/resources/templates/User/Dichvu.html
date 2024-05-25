@@ -123,6 +123,25 @@
                                 </div>
                             </div>
                         </div>
+        
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
+                                        <a class="page-link" th:href="@{/DichVu(page=${currentPage - 1}, size=${size})}">&laquo; Trang trước</a>
+                                    </li>
+                                    <li class="page-item" th:each="pageNum : ${#numbers.sequence(0, totalPages - 1)}"
+                                        th:classappend="${pageNum == currentPage} ? 'active'">
+                                        <a class="page-link" th:href="@{/DichVu(page=${pageNum}, size=${size})}" th:text="${pageNum + 1}">1</a>
+                                    </li>
+                                    <li class="page-item" th:classappend="${currentPage + 1 >= totalPages} ? 'disabled'">
+                                        <a class="page-link" th:href="@{/DichVu(page=${currentPage + 1}, size=${size})}">Trang sau &raquo;</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+        
                     </div>
                 </div>
             </div>

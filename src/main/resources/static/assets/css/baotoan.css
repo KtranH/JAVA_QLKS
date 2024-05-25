@@ -150,3 +150,13 @@
 .disabled .card-img img { 
     filter: grayscale(100%); 
 }
+
+/* CSS Page */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+

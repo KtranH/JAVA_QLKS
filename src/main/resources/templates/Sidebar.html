@@ -78,19 +78,9 @@
             </a>
             <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="charts-chartjs.html">
-                  <i class="bi bi-circle"></i><span>Dịch vụ đưa đón</span>
-                </a>
-              </li>
-              <li>
-                <a href="charts-apexcharts.html">
-                  <i class="bi bi-circle"></i><span>Dịch vụ ăn uống</span>
-                </a>
-              </li>
-              <li>
-                <a href="charts-echarts.html">
-                  <i class="bi bi-circle"></i><span>Dịch vụ tiện ích</span>
-                </a>
+                <a th:href="@{/DichVu(page=0, size=6)}">
+                  <i class="bi bi-circle"></i><span>Tất cả dịch vụ</span>
+                </a>            
               </li>
             </ul>
           </li><!-- End Charts Nav -->
@@ -101,17 +91,17 @@
             </a>
             <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="icons-bootstrap.html">
+                <a th:href="@{/CoSo1}">
                   <i class="bi bi-circle"></i><span>Cơ sở 1</span>
                 </a>
               </li>
               <li>
-                <a href="icons-remix.html">
+                <a th:href="@{/CoSo2}">
                   <i class="bi bi-circle"></i><span>Cơ sở 2</span>
                 </a>
               </li>
               <li>
-                <a href="icons-boxicons.html">
+                <a th:href="@{/CoSo3}">
                   <i class="bi bi-circle"></i><span>Cở sở 3</span>
                 </a>
               </li>
