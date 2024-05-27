@@ -1,0 +1,6 @@
+6 giờ|Mở dịch vụ ăn sáng tại khách sạn
+9 giờ|Bắt đầu nhận phòng đặt trước
+12 giờ|Mở dịch vụ ăn trưa tại khách sạn
+15 giờ|Đăng ký các dịch vụ liên quan
+16 giờ|Bắt đầu quy trình trả phòng
+22 giờ|Đóng cửa, tạm ngưng nhận phòng
