@@ -1,0 +1,154 @@
+.ContainerDV {
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.titleDV{
+    font-size: 30px;
+    color: blue;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex; 
+    align-items: center; 
+}
+
+.imagesDV {
+    flex: 0 0 auto;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.imagesDV img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+}
+
+.details {
+    flex: 1;
+    text-align: left;
+}
+
+.titleNameKS{
+    font-size: 30px;
+    font-weight: 650;
+    color: coral;    
+}
+
+.titleTenDV {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.titleTenDV span{
+    color: red;
+    font-weight: 600;
+}
+
+.GiaDV {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.GiaDV span{
+    color: red;
+    font-weight: 600;
+}
+
+.btnThemDV button {
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btnThemDV button:hover {
+    background-color: darkblue;
+}
+
+.footerDV{
+    margin-top: 20px;
+}
+
+/* END CSS DICH VU */
+
+.titleCS{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: white;
+    font-size: 50px;
+    height: 120px;
+    color: black;
+    font-weight: bold;
+    line-height: 120px;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.nameHotel{
+    font-size: 55px;
+    color: rgb(0, 49, 89);
+    font-weight: 700;
+}
+
+.nameLocation{
+    font-size: 42px;
+    color: rgb(0, 49, 89);
+    font-weight: bold;
+}
+
+.underscore{
+    margin-top: 10px;
+    width: 120px;
+    border: 3px solid red;
+    margin-bottom: 10px;
+}
+
+.infoLocation{
+    font-size: 15px;
+    color: rgb(5, 31, 77);
+    line-height: 1.4;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.infoSlide{
+    margin-top: 50px !important;
+}
+
+.titleTienIch{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(0, 49, 89);
+    font-weight: bold;
+}
+
+.Toan_text-title{
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #191970;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.disabled .card-img img { 
+    filter: grayscale(100%); 
+}

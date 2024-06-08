@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <div th:replace="~{Container :: head}"></div>
+       <!-- Link icon -->
+       <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+       <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  </head>
+  <body>
+    <div>
+        <title>GTX - Quản lý thông tin</title>
+        <main id="main" class="main">
+      
+            <div class="pagetitle">
+                <h1>Thông tin</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item">Thông tin</li>
+                        <li class="breadcrumb-item active">Tùy chỉnh thông tin</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+            <section class="section profile">
+                <div class="row">
+                    <div class="col-xl-8" style="width:100%">
+        
+                        <div class="card" style="border-radius:20px;">
+                            <div class="card-body pt-3">
+                                <!-- Bordered Tabs -->
+                                <ul class="nav nav-tabs nav-tabs-bordered">
+                                    <li class="nav-item">
+                                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#luutru">Khách hàng lưu trú</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phieudatphong">Danh sách phiếu đặt phòng</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#hoadon">Danh sách hóa đơn</button>
+                                    </li>
+                                </ul>
+                              
+                            <div class="tab-content pt-1">
+        
+                                <div class="tab-pane fade active show profile-overview" id="luutru">
+                                        <h5 class="card-title" style="font-family: 'Montserrat', sans-serif;
+                                        font-optical-sizing: auto;
+                                        font-weight: 400;
+                                        font-style: normal;">Khách hàng lưu trú</h5>
+            
+                                        <!-- Bảng hiển thị danh khách hàng từng lưu trú -->
+            
+                                        <table class="table table-borderless datatable">
+                                            <thead>
+                                                    <tr>
+                                                        <th scope="col">Mã khách</th>
+                                                        <th scope="col">Tên khách</th>
+                                                        <th scope="col">Căn cước</th>
+                                                        <th scope="col">Điện thoại</th>
+                                                    </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr th:each="item : ${selectKH}">
+                                                        <th scope="row"><a href="#" th:text="${item[0]}"></a></th>
+                                                        <td th:text="${item[1]}"></td>
+                                                        <td><a href="#" class="text-primary" th:text="${item[5]}"></a></td>
+                                                        <td th:text="${item[2]}"></td>
+                                                    </tr>              
+                                            </tbody>
+                                        </table>
+                                 </div>
+                            </div>
+
+                                <div class="tab-content pt-2">
+        
+                                    <div class="tab-pane fade show profile-overview" id="phieudatphong">
+                                        
+                                        <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
+                                        font-optical-sizing: auto;
+                                        font-weight: 400;
+                                        font-style: normal;">Phiếu đăng ký hiện có</h5>
+                                        
+                                        <!-- Bảng hiển thị danh sách đánh giá chờ duyệt -->
+                                        <table class="table table-borderless datatable">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Mã phiếu</th>
+                                                <th scope="col">Mã nhân viên</th>
+                                                <th scope="col">Tên loại</th>
+                                                <th scope="col">Tên phòng</th>
+                                                <th scope="col">Ngày nhận phòng</th>
+                                                <th scope="col">Ngày trả phòng</th>
+                                                <th scope="col">Tiền phòng</th>
+                                                <th scope="col">Tình trạng</th>
+                                                <th scope="col">Tình thái nhận phòng</th>
+                                                <th scope="col">Chức năng</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr th:each="item : ${selectPDK}">
+                                                        <th scope="row"><a href="#" th:text="${item[0]}"></a></th>
+                                                        <td th:text="${item[1]}"></td>
+                                                        <td th:text="${item[15]}"></td>
+                                                        <td th:text="${item[10]}"></td>
+                                                        <td th:text="${item[3]}"></td>
+                                                        <td><a href="#" class="text-primary" th:text="${item[5]}"></a></td>
+                                                        <td th:text="${item[6]}"></td>
+                                                        <td th:if="${item[4] == 'Đặt trước'}"><span class="badge bg-secondary" th:text="${item[4]}"></span></td>
+                                                        <td th:if="${item[4] == 'Đã xác nhận'}"><span class="badge bg-success" th:text="${item[4]}"></span></td>
+                                                        <td th:if="${item[4] == 'Đã hủy'}"><span class="badge bg-danger" th:text="${item[4]}"></span></td>
+                                                        <td th:if="${item[7] == 'Đang đợi'}"><span class="badge bg-warning" style="color: white" th:text="${item[7]}"></span></td>
+                                                        <td th:if="${item[7] == 'Đã nhận phòng'}"><span class="badge bg-success" th:text="${item[7]}" ></span></td>
+                                                        <td th:if="${item[7] == 'Đã trả phòng'}"><span class="badge bg-success" th:text="${item[7]}"></span></td>
+                                                        <td th:if="${item[7] == 'Đã hủy'}"><span class="badge bg-danger" th:text="${item[7]}"></span></td>
+                                                        <td><a href="#" type="button" class="btn btn-info" style="border-radius:20%;margin-right:20px;color:white;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;background-color:#74C0FC"><i class="fa-solid fa-eye" style="color: #ffffff;"></i></a></td>
+                                                    </tr>              
+                                            </tbody>
+                                          </table>
+        
+                                    </div>
+                                </div>  
+                                <div class="tab-content pt-3">
+        
+                                    <div class="tab-pane fade show profile-overview" id="hoadon">
+                                        
+                                        <h5 class="card-title" style="margin-top:-25px; font-family: 'Montserrat', sans-serif;
+                                        font-optical-sizing: auto;
+                                        font-weight: 400;
+                                        font-style: normal;">Danh sách hóa đơn</h5>
+                                        
+                                        <!-- Bảng hiển thị danh sách đánh giá chờ duyệt -->
+                                        <table class="table table-borderless datatable">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Mã hóa đơn</th>
+                                                <th scope="col">Mã nhân viên</th>
+                                                <th scope="col">Mã phiếu</th>
+                                                <th scope="col">Ngày lập</th>
+                                                <th scope="col">Tổng tiền</th>
+                                                <th scope="col">Chức năng</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr th:each="item : ${selectHD}">
+                                                        <th scope="row"><a href="#" th:text="${item[0]}"></a></th>
+                                                        <td th:text="${item[1]}"></td>
+                                                        <td th:text="${item[2]}"></td>
+                                                        <td th:text="${item[3]}"></td>
+                                                        <td th:text="${item[4]}"></td>
+                                                        <td><a href="#" type="button" class="btn btn-info" style="border-radius:20%;margin-right:20px;color:white;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;background-color:#74C0FC"><i class="fa-solid fa-eye" style="color: #ffffff;"></i></a></td>
+                                                    </tr>              
+                                            </tbody>
+                                          </table>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </main>
+     </div>
+    <div th:replace="~{Container :: body}"></div>
+  </body>
+</html>
